@@ -1,0 +1,75 @@
+.image-hover-effect {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.image-hover-effect img {
+    transition: all 0.3s ease;
+    width: 100%;
+    height: auto;
+}
+
+.image-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.image-hover-effect:hover::before {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    color: #ffffff;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 2;
+}
+
+.image-hover-effect:hover .hover-text {
+    display: block;
+}
+
+.custom-list {
+    list-style: none;
+    /* Remove default list style */
+    padding-left: 1.2rem;
+    /* Adjust padding to position the bullet */
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    /* Adjust padding for text alignment */
+    text-indent: 0em;
+    /* Negative indent to bring the first line back */
+}
+
+.custom-list li::before {
+    content: "•";
+    /* Unicode for bullet */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5rem;
+    /* Adjust bullet size */
+    line-height: 1.5rem;
+    /* Adjust line height for alignment */
+    color: black;
+    /* Bullet color */
+}
